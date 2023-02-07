@@ -1,0 +1,65 @@
+/* Create table about the people and what they do here */
+
+CREATE TABLE bands (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, year INTEGER);
+ 
+INSERT INTO bands (name, year) VALUES ("Blink 182", 1992);
+INSERT INTO bands (name, year) VALUES ("My Chemical Romance", 2001);
+INSERT INTO bands (name, year) VALUES ("Fall Out Boy", 2001);
+INSERT INTO bands (name, year) VALUES ("Green Day", 1987);
+INSERT INTO bands (name, year) VALUES ("Good Charlotte", 1996);
+INSERT INTO bands (name, year) VALUES ("New Found Glory", 1997);
+INSERT INTO bands (name, year) VALUES ("Yellow Card", 1997);
+INSERT INTO bands (name, year) VALUES ("SUM 41", 1996);
+INSERT INTO bands (name, year) VALUES ("Paramore", 2004);
+INSERT INTO bands (name, year) VALUES ("Alkaline Trio", 1996);
+INSERT INTO bands (name, year) VALUES ("All Time Low", 2003);
+INSERT INTO bands (name, year) VALUES ("The Offspring", 1984);
+INSERT INTO bands (name, year) VALUES ("Relient K", 1998);
+INSERT INTO bands (name, year) VALUES ("Taking Back Sunday", 1999);
+INSERT INTO bands (name, year) VALUES ("The Used", 2001);
+
+
+CREATE TABLE started (id INTEGER PRIMARY KEY AUTOINCREMENT, tours INTEGER, city TEXT);
+
+INSERT INTO started (tours, city) VALUES (12, "Poway");
+INSERT INTO started (tours, city) VALUES (4, "Newark");
+INSERT INTO started (tours, city) VALUES (8, "Wilmette");
+INSERT INTO started (tours, city) VALUES (3, "Springfield");
+INSERT INTO started (tours, city) VALUES (6, "Dallas");
+INSERT INTO started (tours, city) VALUES (2, "Austin");
+INSERT INTO started (tours, city) VALUES (4, "Houston");
+INSERT INTO started (tours, city) VALUES (8, "Tampa");
+INSERT INTO started (tours, city) VALUES (3, "Miami");
+INSERT INTO started (tours, city) VALUES (1, "Talahasse");
+INSERT INTO started (tours, city) VALUES (7, "Nashville");
+INSERT INTO started (tours, city) VALUES (9, "Omaha");
+INSERT INTO started (tours, city) VALUES (4, "Chicago");
+INSERT INTO started (tours, city) VALUES (6, "Milwaukee");
+INSERT INTO started (tours, city) VALUES (16, "Las Vegas");
+
+CREATE TABLE albums (id INTEGER PRIMARY KEY AUTOINCREMENT, studio_albums INTEGER, albums_sold INTEGER);
+
+INSERT INTO albums (studio_albums, albums_sold) VALUES (8, 50000000);
+INSERT INTO albums (studio_albums, albums_sold) VALUES (4,9000000);
+INSERT INTO albums (studio_albums, albums_sold) VALUES (7, 30000000);
+INSERT INTO albums (studio_albums, albums_sold) VALUES (1, 100000);
+INSERT INTO albums (studio_albums, albums_sold) VALUES (3, 225000);
+INSERT INTO albums (studio_albums, albums_sold) VALUES (5, 950000);
+INSERT INTO albums (studio_albums, albums_sold) VALUES (7, 7000000);
+INSERT INTO albums (studio_albums, albums_sold) VALUES (9, 25000000);
+INSERT INTO albums (studio_albums, albums_sold) VALUES (2, 400000);
+INSERT INTO albums (studio_albums, albums_sold) VALUES (4, 30000000);
+INSERT INTO albums (studio_albums, albums_sold) VALUES (6, 6500000);
+INSERT INTO albums (studio_albums, albums_sold) VALUES (8, 200000);
+INSERT INTO albums (studio_albums, albums_sold) VALUES (12, 35000000);
+INSERT INTO albums (studio_albums, albums_sold) VALUES (7, 4300000);
+INSERT INTO albums (studio_albums, albums_sold) VALUES (9, 800000);
+
+SELECT bands.name, albums.albums_sold FROM bands
+    JOIN albums
+    ON bands.id = albums.id;
+
+
+SELECT bands.name, started.tours FROM bands
+    JOIN started
+    ON bands.id = started.id;
